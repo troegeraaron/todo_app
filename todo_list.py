@@ -2,7 +2,10 @@
 
 import csv, os
 
-file = "todo-list.csv"
+# expanduser("~") returns the path to the users home directory ie: /home/USER
+path = os.path.expanduser("~")
+filename = "todo-list.csv"
+file= os.path.join(path, 'scripts', filename)
 if not os.path.exists(file):
     with open(file, 'w') as f:
         writer = csv.writer(f)
